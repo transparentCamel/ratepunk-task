@@ -1,0 +1,12 @@
+@import '../../styles/variable.module.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: $color-primary;
+  border: 1px solid $color-black;
+  cursor: pointer;
+  border-radius: 8px;
+}

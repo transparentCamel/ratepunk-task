@@ -1,0 +1,111 @@
+@import '../variable.module.scss';
+@import '../mixins.scss';
+
+.form {
+  background-color: $color-custom-white;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-black;
+  border-radius: 16px;
+  width: 70%;
+  @include mobile() {
+    padding: 32px 16px;
+    width: auto;
+  }
+  h1 {
+    margin: 0px 0px 32px 0px;
+    @include mobile() {
+      margin: 0px 0px 24px 0px;
+    }
+  }
+  p {
+    margin: 0px 0px 64px 0px;
+    @include mobile() {
+      margin: 0px 0px 24px 0px;
+    }
+  }
+  .paragraph {
+    font-size: 20px;
+    line-height: 32px;
+    @include mobile() {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .reward {
+    margin: 128px 0px 0px 0px;
+    color: #6d7a80;
+    @include mobile() {
+      margin: 64px 0px 0px 0px;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    @include mobile() {
+      margin-top: 16px;
+    }
+
+    #error {
+      position: absolute;
+      color: $color-error;
+      top: 0;
+      transform: translateY(-24px);
+      font-size: 12px;
+    }
+
+    .field {
+      background-color: #ffff;
+      max-height: 64px;
+      @include mobile() {
+        max-height: 56px;
+      }
+      .envelope {
+        margin: 0px 20px;
+        display: flex;
+      }
+      input {
+        border: none;
+        font-size: 20px;
+        color: #6d7a80;
+        flex: 1;
+        padding-right: 16px;
+        @include mobile() {
+          font-size: 16px;
+          padding-right: 0px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .field,
+    #submit {
+      border: 1px solid $color-black;
+      border-radius: 8px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    #submit {
+      background-color: $color-primary;
+      color: #ffff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      max-height: 64px;
+      @include mobile() {
+        font-size: 16px;
+        max-height: 56px;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '../variable.module.scss';
+@import '../mixins.scss';
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 2px solid $color-black;
+  height: 80px;
+  padding: 0px 400px;
+  flex-wrap: wrap;
+
+  .logo {
+    width: 125px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  @include mobile() {
+    height: auto;
+    padding: 16px;
+  }
+  .hamburger {
+    cursor: pointer;
+    display: none;
+    @include mobile() {
+      display: block;
+    }
+  }
+  .nav {
+    @include mobile() {
+      width: 100vw;
+    }
+    &.display-none {
+      @include mobile() {
+        display: none;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 52px;
+      @include mobile() {
+        flex-direction: column;
+        gap: 32px;
+        margin: 32px 0px;
+      }
+      li {
+        font-size: 20px;
+        color: #434a54;
+        @include mobile() {
+          font-size: 16px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import '../variable.module.scss';
+@import '../mixins.scss';
+.footer {
+  padding: 64px 400px;
+  display: flex;
+  gap: 128px;
+  background-color: $color-custom-white;
+  position: relative;
+  @include mobile() {
+    padding: 64px 32px;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    @include mobile() {
+      width: 100%;
+    }
+
+    h3 {
+      margin: 0px 0px 24px 0px;
+      letter-spacing: 1.6px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &:last-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @include mobile() {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li {
+        color: #434a54;
+
+        &:hover {
+          cursor: pointer;
+          color: $color-primary;
+        }
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      p {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 32px;
+}
+.about {
+  margin: 0px;
+}
+.legal {
+  color: #6d7a80;
+  margin-top: 46px;
+  margin-bottom: 0px;
+  @include mobile() {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 48px;
+  }
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mobile() {
+    gap: 32px;
+  }
+}

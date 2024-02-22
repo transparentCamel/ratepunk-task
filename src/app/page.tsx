@@ -1,95 +1,74 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from '../styles/pages/landing.module.scss';
+import Image from 'next/image';
+import envelope from '../assets/email.svg';
+import StepCard from '@/core/components/StepCard';
+import invite from '../assets/invite.svg';
+import coins from '../assets/collect-coins.svg';
+import voucher from '../assets/voucher.svg';
+import StoreCard from '@/core/components/StoreCard';
+import chrome from '../assets/chrome.svg';
+import apple from '../assets/apple.svg';
+import star from '../assets/star-solid.svg';
+import Form from '@/core/features/Form';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <section className={styles.topContainer}>
+        <Form />
+        <div className={styles.stepCardContainer}>
+          <StepCard
+            svg={invite}
+            alt='invite'
+            step='STEP 1'
+            heading='INVITE FRIENDS'
+            paragraph='Refer friends with your unique referral link.'
+            reverse={false}
+          />
+          <StepCard
+            svg={coins}
+            alt='coins'
+            step='STEP 2'
+            heading='COLLECT COINS'
+            paragraph='Get 1 coin for each friend that installs our extension using your referral link.'
+            reverse={true}
+          />
+          <StepCard
+            svg={voucher}
+            alt='voucher'
+            step='STEP 3'
+            heading='GET VOUCHER'
+            paragraph='Redeem for a $20 hotel booking voucher once you collect 20 coins.'
+            reverse={false}
+          />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
+      <section className={styles.store}>
+        <div className={styles.storeCardContainer}>
+          <StoreCard
+            svg={chrome}
+            alt='Chrome web store'
+            text='chrome web store'
+            href='https://chromewebstore.google.com/detail/ratepunk-hotel-booking-an/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk'
+          />
+          <StoreCard
+            href='https://apps.apple.com/us/app/ratepunk-hotel-and-travel/id1607823726'
+            svg={apple}
+            alt='Apple app store'
+            text='apple app store'
+          />
+        </div>
+        <div>
+          <span className={styles.starContainer}>
+            <Image src={star} alt='star' height={20} priority />
+            <Image src={star} alt='star' height={20} priority />
+            <Image src={star} alt='star' height={20} priority />
+            <Image src={star} alt='star' height={20} priority />
+            <Image src={star} alt='star' height={20} priority />
+          </span>
+          <p className={styles.reviewText}>Chrome Store reviews</p>
+        </div>
+      </section>
     </main>
   );
 }

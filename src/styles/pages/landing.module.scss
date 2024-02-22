@@ -1,0 +1,75 @@
+@import '../variable.module.scss';
+@import '../mixins.scss';
+.main {
+  background-color: $color-secondary;
+  display: flex;
+
+  flex-direction: column;
+
+  section {
+    display: flex;
+    flex-direction: row;
+  }
+  .topContainer {
+    padding: 64px 400px;
+    gap: 128px;
+    display: flex;
+  }
+  @include mobile() {
+    .topContainer {
+      flex-direction: column;
+      padding: 64px 16px;
+      gap: 48px;
+    }
+  }
+
+  .stepCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include mobile() {
+      gap: 32px;
+    }
+  }
+  .store {
+    padding: 32px 400px;
+    display: flex;
+    background-color: $color-grey;
+    color: #ffff;
+    gap: 32px;
+    align-items: center;
+    @include mobile() {
+      flex-direction: column;
+      padding: 32px 32px;
+      align-items: center;
+    }
+    .storeCardContainer {
+      display: flex;
+
+      @include mobile() {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+
+      .reviewText {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin: 0px;
+        @include mobile() {
+          font-size: 16px;
+        }
+      }
+      .starContainer {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+}

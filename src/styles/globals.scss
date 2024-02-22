@@ -1,0 +1,30 @@
+@import '../styles/variable.module.scss';
+@import 'fonts';
+@import '../styles/mixins.scss';
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: $color-black;
+  }
+
+  h1 {
+    font: normal normal normal 48px/72px Caveat Brush;
+    @include mobile() {
+      font: normal normal normal 32px/48px Caveat Brush;
+    }
+  }
+  h2 {
+    font: normal normal normal 32px/48px Caveat Brush;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
